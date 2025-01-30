@@ -15,22 +15,24 @@ def run_tests():
     server_command = "node server.js"
     server_process = subprocess.Popen(server_command, shell=True, cwd="A1", text=True)
 
-    # Allow time for the server to start (adjust as needed)
+    # Allow time for the server to start
     time.sleep(5)
 
     # Navigate to the client directory and start npm
     print("Starting client...")
     client_command = "npm start"
     client_return_code = run_command(client_command, cwd="A1/client")
-    
-    # Wait for the client to finish or timeout
-    time.sleep(10)  # Adjust this depending on how long the client takes
 
-    # If the server process is still running, terminate it
+    # Run tests with coverage
+    print("Running tests with coverage...")
+    coverage_command = "pytest --cov=../../A1/tests"
+    coverage_return_code = run_command(coverage_command, cwd="A1/tests")
+
+    # Terminate server if running
     if server_process.poll() is None:
         server_process.terminate()
 
-    return client_return_code
+    return client_return_code or coverage_return_code
 
 if __name__ == "__main__":
     if run_tests() == 0:

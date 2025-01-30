@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests with Coverage
 
 on:
   push:
@@ -22,7 +22,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install -r requirements.txt
 
-      - name: Run Tests
-        run: python A1/tests/test.py  # Update the path to test.py
+      - name: Run Tests with Coverage
+        run: |
+          coverage run A1/tests/test.py
+          coverage report -m
+          coverage xml  # Generate coverage report for external services (optional)
+
+      - name: Upload Coverage Report (Optional)
+        uses: codecov/codecov-action@v3  # Uploads coverage report to Codecov
+        with:
+          file: ./coverage.xml
