@@ -5,4 +5,4 @@ This will create the React app on your local host on port 3000. navigate to (htt
 
 The interface allows you to upload a csv file and to populate your arrays how you like. Either by providing a column index for the csv or by manually entering the arrays. 
 
-The program works with latitude and longitude coordinates and uses +/- instead of E/W
+The program works with latitude and longitude coordinates and uses +/- instead of E/W, it will ignore csv cells that have non numeric characters in it.
