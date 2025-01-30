@@ -12,8 +12,8 @@ def run_command(command, cwd=None):
 def run_tests():
     # Start the server
     print("Starting server...")
-    server_command = "node ../server.js"
-    server_process = subprocess.Popen(server_command, shell=True, cwd="../../A1", text=True)
+    server_command = "node server.js"
+    server_process = subprocess.Popen(server_command, shell=True, cwd="A1", text=True)
 
     # Allow time for the server to start (adjust as needed)
     time.sleep(5)
@@ -21,7 +21,7 @@ def run_tests():
     # Navigate to the client directory and start npm
     print("Starting client...")
     client_command = "npm start"
-    client_return_code = run_command(client_command, cwd="../../A1/client")
+    client_return_code = run_command(client_command, cwd="A1/client")
     
     # Wait for the client to finish or timeout
     time.sleep(10)  # Adjust this depending on how long the client takes
