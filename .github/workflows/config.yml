@@ -28,7 +28,12 @@ jobs:
         run: |
           coverage run A1/tests/test.py
           coverage report -m
-          coverage xml  # Generate coverage report for external services (optional)
+
+      - name: Run SmartHouseAPI test w coverage
+        run: |
+          coverage run A2/tests/test_smart_house_api.py
+          coverage report -m
+          coverage xml
 
       - name: Upload Coverage Report (Optional)
         uses: codecov/codecov-action@v3  # Uploads coverage report to Codecov
