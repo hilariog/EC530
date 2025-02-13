@@ -1,4 +1,9 @@
 # test_smart_house_api.py
+import sys
+import os
+
+# Add the parent directory (the repository root) to sys.path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import unittest
 from smart_house_api import User, House, Room, Device, RoomNotFoundError, DeviceNotFoundError, UserNotFoundError
