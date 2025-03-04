@@ -1,0 +1,1 @@
+Integrated smart house API as a RESTful API.

@@ -26,12 +26,17 @@ jobs:
 
       - name: Run Tests with Coverage
         run: |
-          coverage run A1/tests/test.py
+          coverage run gpsProgram/tests/test.py
           coverage report -m
 
       - name: Run SmartHouseAPI test w coverage
         run: |
-          coverage run A2/tests/test_smart_house_api.py
+          coverage run SmartHouseStubs/tests/test_smart_house_api.py
+          coverage report -m
+
+      - name: Run SmartHouseAPI test w coverage
+        run: |
+          coverage run SmartHouseREST/tests/test_smart_house_rest_api.py
           coverage report -m
           coverage xml
 

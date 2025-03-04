@@ -1,3 +1,7 @@
 pytest
 pytest-cov  # Enables test coverage reporting
 coverage  # Command-line tool for measuring code coverage
+fastapi
+uvicorn
+pydantic
+httpx
