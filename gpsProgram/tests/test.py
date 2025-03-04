@@ -13,7 +13,7 @@ def run_tests():
     # Start the server
     print("Starting server...")
     server_command = "node server.js"
-    server_process = subprocess.Popen(server_command, shell=True, cwd="A1", text=True)
+    server_process = subprocess.Popen(server_command, shell=True, cwd="gpsProgram", text=True)
 
     # Allow time for the server to start
     time.sleep(5)
@@ -21,12 +21,12 @@ def run_tests():
     # Navigate to the client directory and start npm
     print("Starting client...")
     client_command = "npm start"
-    client_return_code = run_command(client_command, cwd="A1/client")
+    client_return_code = run_command(client_command, cwd="gpsProgram/client")
 
     # Run tests with coverage
     print("Running tests with coverage...")
-    coverage_command = "pytest --cov=../../A1/tests"
-    coverage_return_code = run_command(coverage_command, cwd="A1/tests")
+    coverage_command = "pytest --cov=../../gpsProgram/tests"
+    coverage_return_code = run_command(coverage_command, cwd="gpsProgram/tests")
 
     # Terminate server if running
     if server_process.poll() is None:
