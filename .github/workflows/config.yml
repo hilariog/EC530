@@ -34,7 +34,7 @@ jobs:
           coverage run SmartHouseStubs/tests/test_smart_house_api.py
           coverage report -m
 
-      - name: Run SmartHouseAPI test w coverage
+      - name: Run SmartHouseRESTAPI test w coverage
         run: |
           coverage run SmartHouseREST/tests/test_smart_house_rest_api.py
           coverage report -m
