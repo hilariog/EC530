@@ -1,17 +1,18 @@
 -> To use the code in p2pAdvanced/p2p.py:
-A single Python file with two modes, to use follwo these instructions:
+The most advanced p2p directory
+A single Python file with two modes, to use follow these instructions:
 Install required Python packages(ubuntu, use brew or arm installs for mac):
 pip install fastapi uvicorn sqlalchemy requests pydantic
 --or--
 pip install -r requirements.txt
 
 1) Discovery server mode (minimal "phonebook"):
-   python3 p2p.py --mode discovery --host 0.0.0.0 --port 8000
+   python3 p2pAdvanced/p2p.py --mode discovery --host 0.0.0.0 --port 8000
    - Stores only: username -> ip_address, last_seen
    - Does NOT store messages.
 
 2) P2P node mode (full node):
-   python3 p2p.py --mode node --my-port 9001 --username Alice --ip-addr 192.168.1.10 --discovery-url http://127.0.0.1:8000
+   python3 p2pAdvanced/p2p.py --mode node --my-port 9001 --username Hilly --ip-addr 10.239.144.58 --discovery-url http://0.0.0.0:8000
             --mode node: Launches the node mode.
             --my-port: The local port on which this node listens for inbound messages.
             --username: Your chosen username.
@@ -26,6 +27,7 @@ The result is a true P2P design:
  - Each node is both a server (accepting inbound calls from peers) and a client (sending calls to others).
 
 -> To use the code in ./node/node.py
+This is a single file implementation, but simple without backing API or database:
 This is the single file implementation of p2p messaging system
 To use this as a client, run the node.py file, passing your IP address as an argument. It will prompt you choose a port:
 
