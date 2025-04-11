@@ -1,0 +1,6 @@
+2025-04-10 18:35:33,393 - ERROR - Schema conflict for column 'value': existing type 'TEXT', inferred type 'REAL'.
+2025-04-10 18:35:33,397 - ERROR - Schema conflict for column 'value': existing type 'TEXT', inferred type 'REAL'.
+2025-04-10 18:35:33,400 - ERROR - Schema conflict for column 'value': existing type 'TEXT', inferred type 'REAL'.
+2025-04-10 18:44:09,029 - ERROR - Schema conflict for column 'value': existing type 'TEXT', inferred type 'REAL'.
+2025-04-10 18:44:09,033 - ERROR - Schema conflict for column 'value': existing type 'TEXT', inferred type 'REAL'.
+2025-04-10 18:44:09,037 - ERROR - Schema conflict for column 'value': existing type 'TEXT', inferred type 'REAL'.
