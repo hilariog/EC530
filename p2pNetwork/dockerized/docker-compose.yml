@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  discovery:
+    image: p2p-chat
+    command: ["--mode", "discovery", "--host", "0.0.0.0", "--port", "8000"]
+    ports:
+      - "8000:8000"
+
+  node1:
+    image: p2p-chat
+    depends_on:
+      - discovery
+    environment:
+      DISCOVERY_URL: "http://discovery:8000"
+    command:
+      [
+        "--mode", "node",
+        "--my-port", "9001",
+        "--username", "node1",
+        "--ip-addr", "127.0.0.1",
+        "--discovery-url", "${DISCOVERY_URL}"
+      ]
+    ports:
+      - "9001:9001"

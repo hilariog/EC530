@@ -1,4 +1,5 @@
 -> To use the code in p2pAdvanced/p2p.py:
+*** See ./dockerized for the dockerized implementation
 The most advanced p2p directory
 A single Python file with two modes, to use follow these instructions:
 Install required Python packages(ubuntu, use brew or arm installs for mac):
